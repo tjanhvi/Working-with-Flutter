@@ -18,15 +18,15 @@ class MyApp extends StatelessWidget {
             children: <Widget>[               
               Container(
                 width: 90.0,
-                color: Colors.red,                            
+                color: Colors.redAccent,                            
               ),                 
               Container(
                 width: 90.0,                    
-                color: Colors.blue,
+                color: Colors.blueAccent,
               ),
               Container(
                 width: 90.0,
-                color: Colors.green,
+                color: Colors.greenAccent,
               ),
             ],
           ),
