@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_new
 
 import 'package:flutter/material.dart';
+import 'package:loginsignup_app/screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -21,7 +22,7 @@ class LoginPage extends StatefulWidget{
   State createState() => new LoginPageState();
 }
 
-class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixin{
+class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixin{  
 
   late AnimationController _iconAnimationController;
   late Animation<double> _iconAnimation;
@@ -69,6 +70,7 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
                     brightness: Brightness.dark,
                     primarySwatch: Colors.teal,
                     inputDecorationTheme: new InputDecorationTheme(
+                      // ignore: prefer_const_constructors
                       labelStyle: new TextStyle(
                         color: Colors.teal,
                         fontSize: 20.0,
@@ -80,8 +82,7 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
                     child: new Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        new TextFormField(
-                          decoration: const InputDecoration(
+                        new TextFormField(                       decoration: const InputDecoration(
                             labelText: "Enter Email"
                           ),
                           keyboardType: TextInputType.emailAddress,
@@ -91,8 +92,9 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
                             labelText: "Enter Password"
                           ),
                           keyboardType: TextInputType.text,
-                          obscureText: true,
+                          obscureText: false,
                         ),
+                        // ignore: prefer_const_constructors
                         new Padding(
                           padding: const EdgeInsets.only(top: 40.0),                         
                         ),
@@ -102,7 +104,12 @@ class LoginPageState extends State<LoginPage> with SingleTickerProviderStateMixi
                           color: Colors.teal,
                           textColor: Colors.white,
                           child: new Text("Login"),
-                          onPressed: () => {},
+                          onPressed: () {                            
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const MyWidget()),
+                            );
+                          },
                           splashColor: Colors.redAccent,
                         ), 
                       ],
